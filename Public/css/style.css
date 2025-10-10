@@ -210,8 +210,10 @@ main {
     color: #8c3232;
 
     background-color: rgb(12, 4, 36);
-    box-shadow: 4px 4px rgb(12, 4, 36);
+    box-shadow: 0px 0px 6px rgb(12, 4, 36);
     transition-duration: 0.2s;
+
+    z-index: 0;
 }
 
 .project > img {
@@ -232,6 +234,9 @@ main {
 
 .project:hover {
     transform: scale(1.2);
+    box-shadow: 0px 0px 24px rgb(12, 4, 36);
+    
+    z-index: 1;
 }
 
 .project > .codename {
