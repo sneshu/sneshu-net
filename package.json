@@ -1,0 +1,19 @@
+{
+  "name": "sneshu.net",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "server": "webpack serve",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production"
+  },
+  "author": "Sneshu",
+  "dependencies": {
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

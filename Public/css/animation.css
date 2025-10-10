@@ -1,0 +1,35 @@
+@keyframes backgroundScroll {
+    0%  { background-position: 0px 0px; }
+    100% { background-position: 64px 0px; }
+}
+
+@keyframes appear-opacity {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes floatAnimationOffsetX {
+    0%, 100% { transform: translateX(-12px); }
+    50% { transform: translateX(12px); }
+}
+
+@keyframes floatAnimationOffsetY {
+    0%, 100% { transform: translateY(-3px); }
+    50% { transform: translateY(2px); }
+}
+
+@keyframes floatAnimationRotation {
+    0%, 100% { transform: rotate(2.0deg) }
+    12% { transform: rotate(2.8deg) }
+    20% { transform: rotate(2.5deg) }
+    25% { transform: rotate(2.0deg) }
+    30% { transform: rotate(1.2deg) }
+    37% { transform: rotate(0.0deg) }
+
+    50% { transform: rotate(-2.0deg) }
+    62% { transform: rotate(-2.8deg) }
+    70% { transform: rotate(-2.5deg) }
+    75% { transform: rotate(-2.0deg) }
+    80% { transform: rotate(-1.2deg) }
+    87% { transform: rotate(0.0deg) }
+}

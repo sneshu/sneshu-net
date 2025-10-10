@@ -1,0 +1,346 @@
+@font-face {
+    font-family: custom;
+    src: url(../Assets/Fonts/Jaapokki-Regular.otf);
+}
+
+body {
+    background-color: #0c0424;
+    overflow-x: hidden;
+}
+
+#animated-background 
+{
+    position: fixed;
+    z-index: 0!important;
+
+    left: -50vw;
+    top: -50vh;
+    width: max(200vw, 200vh);
+    height: max(200vw, 200vh);
+
+    background-image: url(../Assets/Textures/Backgrounds/T_Site_Background.png);
+    background-repeat: repeat;
+    animation: backgroundScroll 5s linear infinite;
+
+    transform-origin: center;
+    transform: rotate(-30deg);    
+}
+
+header
+{
+    width: 100vw;
+    height: 200px;
+}
+
+canvas
+{
+    position: absolute;
+    z-index: 1!important;
+    width: 100vw;
+    height: 200px;
+}
+
+#site-name .rotation-wrapper {
+    animation: floatAnimationRotation 10s linear infinite;
+    animation-delay: -0.6s;
+}
+
+#site-name .offset-wrapper {
+    animation: floatAnimationOffsetX 10s ease-in-out infinite;
+}
+
+#site-name .wobble-wrapper {
+    animation: floatAnimationOffsetY 3.7s ease-in-out infinite;
+}
+
+#site-name {
+    position: absolute;
+    width: 1000px;
+
+    top: 60px;
+    left: calc(50% - 500px);
+    
+    font-family: custom;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 80pt;
+    font-variant: small-caps;
+    color: white;
+
+    transition: 0.5s;
+}
+
+@media (min-width: 1200px)
+{
+    #site-name
+    {
+        top: 50px;
+        font-size: 90pt;
+        transition: 0.1s;
+    }
+}
+
+@media (max-width: 500px)
+{
+    #site-name
+    {
+        top: 80px;
+        font-size: 60pt;
+        transition: 0.1s;
+    }
+}
+
+#site-description, #site-guidance {
+    position: absolute;
+    z-index: 2!important;
+    
+    width: 100%;
+    
+    text-align: center;
+    font-family: custom;
+    font-size: min(32pt, 7vw);
+    font-variant: small-caps;
+    color: rgb(12, 4, 36);
+}
+
+#site-description {
+    position: absolute;
+    top: 200px;
+    height: 50px;
+}
+
+#site-description > .no-animation-delay, #site-description > .animation-delayed, #site-guidance {
+    opacity: 0;
+    animation: appear-opacity 1s ease-out forwards;
+}
+
+.up, .down {
+    position: relative;
+    display: inline-block;
+    animation: realign 0.8s ease-out 1.2s normal forwards;
+}
+
+.up {
+    opacity: 0;
+    top: -50px;
+
+}
+
+.down {
+    opacity: 0;
+    top: 50px;
+}
+
+.delay-a {
+    animation-delay: 1.2s;
+}
+
+.delay-b {
+    animation-delay: 1.4s;
+}
+
+.delay-c {
+    animation-delay: 1.6s;
+}
+
+@keyframes realign {
+    0% { opacity: 0; }
+    100% { top: 0px; opacity: 1; }
+}
+
+#site-description > .animation-delayed {
+    animation-delay: 1.2s;
+}
+
+#site-guidance {
+    bottom: 40px;
+    animation-delay: 2.4s;
+}
+
+main, #color-background {
+    top: 200px;
+    width: 100%;
+    background: #8c3232;
+}
+
+main {
+    z-index: 1!important;
+    position: absolute;
+
+    padding-bottom: 100px;
+}
+
+#color-background {
+    z-index: -1!important;
+    position: fixed;
+
+    height: calc(100vh - 200px);
+}
+
+#projects
+{
+    width: 85%;  
+    height: max-content; 
+
+    margin: 0 auto;
+    margin-top: 64px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project {
+    position: relative;
+    min-width: 240px;
+    max-width: 240px;
+    min-height: 200px;
+    max-height: 200px;
+
+    margin: 16px;
+    border: 4px #b34848 solid;
+
+    text-decoration: none;
+    overflow: hidden;
+
+    font-family: custom;
+    font-size: 20pt;
+    text-align: center;
+    text-shadow: 2px 2px rgb(12, 4, 36);
+    color: #8c3232;
+
+    background-color: rgb(12, 4, 36);
+    box-shadow: 4px 4px rgb(12, 4, 36);
+    transition-duration: 0.2s;
+}
+
+.project > img {
+    width: 200%;
+    position: absolute;
+    top: 20px;
+    left: -180px;
+    transition-duration: 0.5s;
+    opacity: 0.6;
+}
+
+.project:hover > img {
+    transform: scale(1.25);
+    top: 60px;
+    left: -225px;
+    opacity: 1.0;
+}
+
+.project:hover {
+    transform: scale(1.2);
+}
+
+.project > .codename {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    padding: 4px 0 2px;
+    
+    color: white;
+    background: #8c3232;
+    border-bottom: 4px #642b2b solid;
+}
+
+.project > .footer {
+    position: absolute;
+    bottom: 4px;
+    width: 100%;
+
+    font-variant: small-caps;
+
+    font-size: 20pt;
+    opacity: 0.4;
+}
+
+.project > .unreleased {
+    position: absolute;
+    bottom: 80px;
+
+    font-variant: small-caps;
+    width: 100%;
+}
+
+.project > .unreleased::before {
+    content: "coming soon";
+}
+
+.project:hover {
+    cursor: pointer;
+    background-color: rgb(14, 6, 40);
+}
+
+.project > .icons {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    left: 0px;
+    bottom: 0px;
+    margin: 4px;
+}
+
+.ts, .js, .cpp, .pixijs, .unity, .unreal, .repository, .steam {
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    margin-right: 4px;
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 4px;
+    background-size: 24px 24px;
+    opacity: 0.6;
+
+    transition-duration: 0.2s;
+}
+
+.ts {
+    background-image: url(../Assets/Textures/Icons/T_TypeScript_Icon.png);
+}
+
+.js {
+    background-image: url(../Assets/Textures/Icons/T_JavaScript_Icon.png);
+}
+
+.cpp {
+    background-image: url(../Assets/Textures/Icons/T_Cpp_Icon.png);
+}
+
+.unreal {
+    background-image: url(../Assets/Textures/Icons/T_UnrealEngine_Icon.png);
+}
+
+.unity {
+    background-image: url(../Assets/Textures/Icons/T_UnityEngine_Icon.png);
+}
+
+.pixijs {
+    background-image: url(../Assets/Textures/Icons/T_PixiJS_Icon.png);
+}
+
+.repository {
+    background-image: url(../Assets/Textures/Icons/T_Github_Icon.png);
+}
+
+.steam {
+    background-image: url(../Assets/Textures/Icons/T_Steam_Icon.png);
+}
+
+a::before
+{
+    inset: 0;
+}
+
+.icons div:hover, .icons a:hover
+{
+    opacity: 1;
+}
+
+::selection, ::-moz-selection {
+    color: #8c3232!important;
+    background: #0c0424!important;
+}
